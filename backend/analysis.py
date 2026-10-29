@@ -9,10 +9,10 @@ def prepare_actuals(raw: pd.DataFrame) -> pd.DataFrame:
     df = df.rename(columns={"generation": "actual"})
     df = df.drop_duplicates("startTime").sort_values("startTime")
 
-    # Decision cutoff: 11:00 UK time on the day before delivery.
+    # Decision cutoff: 9 UK time on the day before delivery.
     # Confirm this against the official gate closure and state it in the README.
     local = df["startTime"].dt.tz_convert("Europe/London")
-    cutoff_local = local.dt.normalize() - pd.Timedelta(days=1) + pd.Timedelta(hours=11)
+    cutoff_local = local.dt.normalize() - pd.Timedelta(days=1) + pd.Timedelta(hours=9, minutes=50)
     df["cutoff"] = cutoff_local.dt.tz_convert("UTC")
     return df
 

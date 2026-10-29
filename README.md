@@ -1,12 +1,11 @@
-# gridbricks
-Shows the wind power forecast that was available before the company had to buy electricity for the next day. Shows how wrong the forecasts were, by comparing them to what the wind actually produced
 # UK Wind Forecast Dashboard
+Shows the wind power forecast that was available before the company had to buy electricity for the next day. Shows how wrong the forecasts were, by comparing them to what the wind actually produced
 
 ## What it does
 Compares the wind forecast used for day-ahead purchases with the actual wind output in January 2026.
 
 ## Live app
-[Add the Vercel or Heroku link after deployment]
+[https://gridbricks-ocwg.vercel.app/]
 
 ## Video demo
 [Add the YouTube link after recording]
@@ -25,7 +24,7 @@ Compares the wind forecast used for day-ahead purchases with the actual wind out
 ## Method
 - Actuals come from FUELHH (fuelType WIND).
 - Forecasts come from WINDFOR.
-- Decision cutoff: 11:00 UK time on the day before delivery. [Add a link to the gate closure source you used.]
+- Decision cutoff: 09:50 UK time on the day before delivery, the N2EX day-ahead gate closure ([Nord Pool source](https://support.nordpoolgroup.com/support/solutions/articles/8000088463-about-the-n2ex-day-ahead-auction)).
 - Only forecasts with publishTime before the cutoff are used. For each slot, the latest one is chosen.
 - Metrics: MAE, RMSE, MAPE. MAPE skips slots where actual generation is zero.
 
@@ -35,5 +34,5 @@ Compares the wind forecast used for day-ahead purchases with the actual wind out
 - Some late forecasts repeat the same value, which may indicate placeholder data.
 - The date filter uses UTC dates. This matches UK days in January but not in summer.
 
-## AI tool disclosure
-I used [name the AI tool, e.g. Claude] to help with [e.g. writing the code, debugging Docker errors, and drafting this README].
+## AI tools used 
+I used Claude to help with the research, writing the code, debugging errors, and drafting this README.

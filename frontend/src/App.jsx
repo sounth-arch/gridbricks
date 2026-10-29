@@ -43,7 +43,7 @@ export default function App() {
     <div style={{ maxWidth: 1000, margin: "0 auto", padding: 24, fontFamily: "Arial, sans-serif" }}>
       <h1>UK Wind Forecast vs Actual</h1>
       <p>
-        Forecasts shown are the latest ones published before the 11:00 decision cutoff
+        Forecasts shown are the latest ones published before the 9:50 decision cutoff
         on the day before delivery.
       </p>
 
